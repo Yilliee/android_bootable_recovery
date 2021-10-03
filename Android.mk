@@ -390,6 +390,45 @@ endif
 ifneq ($(TW_CLOCK_OFFSET),)
 	LOCAL_CFLAGS += -DTW_CLOCK_OFFSET=$(TW_CLOCK_OFFSET)
 endif
+ifneq ($(TW_CUSTOM_CLOCK_POS),)
+       LOCAL_CFLAGS += -DTW_CUSTOM_CLOCK_POS=$(TW_CUSTOM_CLOCK_POS)
+else ifeq ($(TW_THEME),portrait_hdpi)
+       LOCAL_CFLAGS += -DTW_CUSTOM_CLOCK_POS='"540"'
+else ifeq ($(TW_THEME),portrait_mdpi)
+       LOCAL_CFLAGS += -DTW_CUSTOM_CLOCK_POS='"240"'
+else ifeq ($(TW_THEME),landscape_hdpi)
+       LOCAL_CFLAGS += -DTW_CUSTOM_CLOCK_POS='"960"'
+else ifeq ($(TW_THEME),landscape_mdpi)
+       LOCAL_CFLAGS += -DTW_CUSTOM_CLOCK_POS='"400"'
+else ifeq ($(TW_THEME),watch_mdpi)
+       LOCAL_CFLAGS += -DTW_CUSTOM_CLOCK_POS='"160"'
+endif
+ifneq ($(TW_CUSTOM_CPU_TEMP_POS),)
+	LOCAL_CFLAGS += -DTW_CUSTOM_CPU_TEMP_POS=$(TW_CUSTOM_CPU_TEMP_POS)
+else ifeq ($(TW_THEME),portrait_hdpi)
+	LOCAL_CFLAGS += -DTW_CUSTOM_CPU_TEMP_POS='"36"'
+else ifeq ($(TW_THEME),portrait_mdpi)
+	LOCAL_CFLAGS += -DTW_CUSTOM_CPU_TEMP_POS='"15"'
+else ifeq ($(TW_THEME),landscape_hdpi)
+	LOCAL_CFLAGS += -DTW_CUSTOM_CPU_TEMP_POS='"24"'
+else ifeq ($(TW_THEME),landscape_mdpi)
+	LOCAL_CFLAGS += -DTW_CUSTOM_CPU_TEMP_POS='"10"'
+else ifeq ($(TW_THEME),watch_mdpi)
+	LOCAL_CFLAGS += -DTW_CUSTOM_CPU_TEMP_POS='"8"'
+endif
+ifneq ($(TW_CUSTOM_BATTERY_POS),)
+        LOCAL_CFLAGS += -DTW_CUSTOM_BATTERY_POS=$(TW_CUSTOM_BATTERY_POS)
+else ifeq ($(TW_THEME),portrait_hdpi)
+        LOCAL_CFLAGS += -DTW_CUSTOM_BATTERY_POS='"1044"'
+else ifeq ($(TW_THEME),portrait_mdpi)
+        LOCAL_CFLAGS += -DTW_CUSTOM_BATTERY_POS='"465"'
+else ifeq ($(TW_THEME),landscape_hdpi)
+        LOCAL_CFLAGS += -DTW_CUSTOM_BATTERY_POS='"1896"'
+else ifeq ($(TW_THEME),landscape_mdpi)
+        LOCAL_CFLAGS += -DTW_CUSTOM_BATTERY_POS='"790"'
+else ifeq ($(TW_THEME),watch_mdpi)
+        LOCAL_CFLAGS += -DTW_CUSTOM_BATTERY_POS='"312"'
+endif
 ifneq ($(TW_OVERRIDE_SYSTEM_PROPS),)
     TW_INCLUDE_LIBRESETPROP := true
     LOCAL_CFLAGS += -DTW_OVERRIDE_SYSTEM_PROPS=$(TW_OVERRIDE_SYSTEM_PROPS)

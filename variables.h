@@ -148,6 +148,9 @@
 #define TW_UNMOUNT_SYSTEM           "tw_unmount_system"
 #define TW_IS_SUPER                 "tw_is_super"
 #define TW_AUTO_REFLASHTWRP_VAR     "tw_auto_reflashtwrp"
+#define TW_CLOCK_POS                "tw_clock_pos_x"
+#define TW_CPU_TEMP_POS             "tw_cpu_pos_x"
+#define TW_BATTERY_POS              "tw_battery_pos_x"
 
 // Theme versioning
 // version 2 requires theme to handle power button as action togglebacklight

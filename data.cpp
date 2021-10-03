@@ -749,6 +749,10 @@ void DataManager::SetDefaultValues()
 	mConst.SetValue(TW_MIN_SYSTEM_VAR, TW_MIN_SYSTEM_SIZE);
 	mData.SetValue(TW_BACKUP_NAME, "(Auto Generate)");
 
+	mConst.SetValue(TW_CLOCK_POS, TW_CUSTOM_CLOCK_POS);
+	mConst.SetValue(TW_BATTERY_POS, TW_CUSTOM_BATTERY_POS);
+	mConst.SetValue(TW_CUSTOM_CPU_TEMP_POS, TW_CUSTOM_CPU_TEMP_POS);
+
 	mPersist.SetValue(TW_INSTALL_REBOOT_VAR, "0");
 	mPersist.SetValue(TW_SIGNED_ZIP_VERIFY_VAR, "0");
 	mPersist.SetValue(TW_DISABLE_FREE_SPACE_VAR, "0");
